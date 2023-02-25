@@ -1,0 +1,290 @@
+@import url('https://fonts.googleapis.com/css2?family=Roboto:wght@100;300;400;700&display=swap');
+
+* {
+    box-sizing: border-box;
+    margin: 0;
+    padding: 0;
+    font-family: 'Roboto', sans-serif;
+
+}
+
+:root {
+    --cor-principal: #ED4D1B;
+    --cor-secundaria: #FF9A3C;
+    --cor-preto: #000000;
+    --cor-branco: #FFFFFF;
+}
+
+body {
+    background: linear-gradient(90deg, #FFE7D1 0%, #FFF2E6 100%);
+    padding: 0 1rem;
+}
+
+.cabecalho,
+.principal,
+.cursos {
+    border: var(--cor-preto) solid;
+    border-width: 0 1px 1px 1px;
+    padding: 1.25rem;
+}
+
+.cabecalho__imagem {
+    display: block;
+    margin: 1rem auto;
+}
+
+.cabecalho__menu {
+    display: grid;
+    grid-template-columns: 1fr 1fr;
+
+}
+
+.cabecalho__menu a {
+    text-decoration: none;
+    color: var(--cor-preto);
+    font-size: 1.25rem;
+    padding: 0.5rem;
+    font-weight: 600;
+}
+
+.cabecalho__menu a:nth-child(2n-1) {
+    text-align: right;
+}
+
+.botao {
+    background-color: var(--cor-principal);
+    border: 2px solid var(--cor-preto);
+    box-shadow: 4px 4px 0 var(--cor-preto);
+    color: var(--cor-preto);
+    display: block;
+    font-size: 1.25rem;
+    font-weight: 600;
+    padding: 0.75rem 1rem;
+    max-width: 14rem;
+    text-align: center;
+    text-decoration: none;
+    text-transform: uppercase;
+}
+
+.principal {
+    padding-right: 0;
+    padding-bottom: 16rem;
+}
+
+.principal__imagem {
+    display: block;
+    margin: 1.25rem 0 0 auto;
+    max-width: 100%;
+}
+
+.principal__titulo {
+    font-size: 3rem;
+    line-height: 105%;
+}
+
+.titulo__secundario {
+    font-size: 2.5rem;
+}
+
+.principal__p {
+    font-size: 1.25rem;
+    padding-right: 1.25rem;
+}
+
+.principal .botao {
+    position: relative;
+}
+
+.principal .botao::after {
+    content: '';
+    background: url('img/arrow-curve.svg');
+    position: absolute;
+    top: 5rem;
+    right: -6rem;
+    height: 48px;
+    width: 132px;
+}
+.decoracao__titulo {
+    display: block;
+    position: relative;
+}
+
+.decoracao__titulo::after {
+    content: '';
+    background: url('img/three-dashes.svg');
+    position: absolute;
+    top: -0.8rem;
+    height: 36px;
+    width: 40px;
+}
+
+.cursos {
+    padding-bottom: 8rem;
+}
+
+.cards {
+    display: flex;
+    flex-direction: column;
+    align-items: start;
+    gap: 1.25rem;
+    margin-top: -8rem;
+    margin-bottom: 4rem;
+}
+
+.card {
+    background-color: var(--cor-principal);
+    border: 2px solid var(--cor-preto);
+    box-shadow: 4px 4px 0 var(--cor-preto);
+    max-width: 17rem;
+    padding: 2rem 0 0 2rem;
+}
+
+.card:nth-child(2n) {
+    align-self: end;
+    background-color: var(--cor-secundaria);
+}
+
+.card h2 {
+    display: block;
+    font-size: 1.5rem;
+    margin: 1rem 0;
+}
+
+.card p {
+    font-weight: 600;
+}
+
+.card a {
+    display: block;
+    margin: 3rem 0 0 auto;
+    width: fit-content;
+}
+
+
+/* Rodapé */
+
+footer {
+    border-color: var(--cor-preto);
+    border-left: 1px solid;
+    border-right: 1px solid;
+    padding: 1rem 1.25rem 4rem;
+}
+
+footer nav a {
+    text-decoration: none;
+    color: var(--cor-preto);
+    font-weight: 600;
+    display: block;
+    padding: 1rem 0 0.5rem 0;
+}
+
+.footer__form label {
+    display: block;
+    font-size: 1.5rem;
+    font-weight: 600;
+}
+
+.footer__form input {
+    border: 2px solid var(--cor-preto);
+    box-shadow: 4px 4px 0 var(--cor-preto);
+    font-size: 1.5rem;
+    padding: 0.5rem;
+    width: 100%;
+}
+
+
+/* Utilitários  */
+
+.mt-1 {
+    margin-top: 1rem;
+}
+
+.mt-2 {
+    margin-top: 2rem;
+}
+
+.mb-1 {
+    margin-bottom: 1rem;
+}
+
+.mb-2 {
+    margin-bottom: 2rem;
+}
+
+.mx-auto {
+    margin-left: auto;
+    margin-right: auto;
+}
+
+.destaque {
+    color: var(--cor-principal);
+}
+
+.text-center {
+    text-align: center;
+}
+
+
+/* Responsividade */
+
+@media screen and (min-width: 40rem) {
+
+    .cabecalho__menu {
+        display: block;
+        text-align: center;
+    }
+
+    .cards {
+        flex-direction: row;
+        flex-wrap: wrap;
+        justify-content: center;
+    }
+
+    .card:nth-child(2n) {
+        margin-top: 1rem;
+    }
+}
+
+@media screen and (min-width: 48rem) {
+    .cabecalho div {
+        display: flex;
+        align-items: center;
+        justify-content: space-between;
+    }
+    .cabecalho__imagem {
+        width: 10%;
+    }
+
+    .cabecalho__menu a {
+        font-size: 2rem;
+        padding: 1.75rem;
+    }
+}
+
+@media screen and (min-width: 72rem) {
+    .container {
+        display: flex;
+        align-items: center;
+        margin: 0 auto;
+        max-width: 72rem;
+    }
+    .row-reverse {
+        flex-direction: row-reverse;
+    }
+
+    .about-column {
+        flex: 2
+    }
+    .about-column p {
+        font-size: 1.25rem;
+        max-width: 16rem;
+    }
+    
+    footer nav {
+        flex: 1;
+    }
+
+    .footer__form {
+        flex: 3;
+    }
+}
